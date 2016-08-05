@@ -19,5 +19,6 @@ title("Voltaje versus Frecuencia")
 xlabel("Frecuencia $f$ [Hertz]")
 ylabel("Voltaje $V$ [Volt]")
 legend()
+grid()
 legend(loc=2) # esquina superior izquierda
-savefig("fig-ajuste-lineal.pdf")
+savefig("../figs/fig-ajuste-lineal.pdf")

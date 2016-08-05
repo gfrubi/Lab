@@ -11,7 +11,8 @@ errory=[0.2,0.2,0.2,0.2,0.2]
 # Grafica los datos, tamaño 3, 'ro'=círculos rojos
 errorbar(x, y, xerr=errorx, yerr=errory, fmt='ro', 
 	markersize=3, label='Datos experimentales')
-# Grafica ajute
+
+# Grafica ajuste
 xa=linspace(1,450,100)
 ya=0.46*xa**0.5
 #plot(xa,ya, label='Ajuste')
@@ -20,5 +21,6 @@ title(u"Fuerza versus Deformación")
 xlabel("Fuerza $F$ [N]")
 ylabel(u"Deformación $L$ [mm]")
 legend()
+grid()
 legend(loc=2) # esquina superior izquierda
-savefig("fig-ajuste-log-log.pdf")
+savefig("../figs/fig-ajuste-log-log.pdf")
