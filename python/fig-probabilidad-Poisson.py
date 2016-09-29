@@ -1,22 +1,17 @@
 # -*- coding: UTF-8 -*-
 from matplotlib.pyplot import *
 from numpy import *
-from scipy.special import gamma
+#from scipy.special import gamma # importa la funcion gamma para calcular factorial
+from scipy.stats import poisson # importa la distribucion de Poisson
 
-datbabs = genfromtxt("datos_poisson.txt")
-x=datbabs[:,0]
-y=datbabs[:,1]
+x=arange(16)
 
-p=y/sum(y) # probabilidad 
-mu=sum(x*p) # mu calculado como el valor medio
-
-xx=linspace(0,12,100)
-poisson=exp(-mu)*mu**xx/gamma(xx+1)
-
-bar(x,p,align="center")
-plot(xx,poisson, 'r', linewidth=2)
-xlabel("Variable independiente")
-ylabel(u"Probabilidad")
-xlim([-.6,12])
-eje.set_xlim([-.6,12])
-fig.savefig("fig-probabilidad-Poisson.pdf")
+for mu in [1,4,8]:
+#	p = exp(-mu)*mu**x/gamma(x+1)  # podemos evaluar directamente la funcion
+	p = poisson.pmf(x,mu) # o podemos usar la probabilidad ya definida en scipy.stats
+	plot(x,p, marker='o', label=u'$\mu= $'+str(mu))
+legend()
+grid()
+xlabel("$x$")
+ylabel("Probabilidad")
+savefig("../figs/fig-probabilidad-Poisson.pdf")
