@@ -1,7 +1,7 @@
 # -*- coding: UTF-8 -*-
 # adaptado a partir de la figura en http://en.wikipedia.org/wiki/File:Normal_Distribution_PDF.svg
 from numpy import *
-import matplotlib.pyplot as p
+from matplotlib.pyplot import *
 
 def make_gauss(N, sig, mu):
     return lambda x: N/(sig * (2*pi)**.5) * e ** (-(x-mu)**2/(2 * sig**2))
@@ -22,4 +22,4 @@ legend([r'$\sigma=$'+str(s[0]), r'$\sigma=$'+str(s[1])], loc='best')
 xlabel('$x$')
 ylabel('$f(x)$')
 grid(True)
-savefig('fig-normal.pdf')
+savefig('../figs/fig-normal.pdf')
