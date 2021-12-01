@@ -8,12 +8,16 @@
 \usepackage{cancel}
 \usepackage{marginnote}
 
-\renewcommand*{\marginnotevadjust}{-0.1cm}
-\renewcommand*{\marginfont}{\footnotesize}
-\usepackage[right=4.5cm,left=2cm,top=3cm,bottom=3.0cm]{geometry}
-
-%\usepackage[notref]{showkeys} % muestra los labels de las referencias.
-
+\usepackage[screen,nopanel,sectionbreak]{pdfscreen}
+\hypersetup{pdftoolbar=true}
+\margins{0.25in}{0.25in}{0.25in}{0.25in}
+\screensize{3.5in}{6.2in} %16:9
+%\screensize{3in}{4in} %3:4
+%\backgroundcolor{blue}
+%\color{white}
+%\overlay{aaCWS.jpg}
+%\emblema{logo_cir.jpg}
+%\urlid{http://online.redwoods.cc.ca.us/instruct/darnold}
 \spanishdecimal{.}
 
 
@@ -33,7 +37,6 @@
 %\input{cap-probabilidades.tex}
 \input{cap-propagacion-desviacion-estandar.tex}
 \input{bibliografia.tex}
-
 
 \end{document}
 
